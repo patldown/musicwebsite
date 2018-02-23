@@ -1,0 +1,71 @@
+<body align = "center">
+<h1> {{ Musician_Name }} </h1>
+
+{% autoescape off %}
+{{ Subscribe_Embed }}
+{% endautoescape %}
+
+<h2> Music </h2>
+{% if Music_Embed %}
+
+	<!--- Auto-Escape allows the html to be read as a variable -->
+	{% autoescape off %}
+	{% for album in Music_Embed %}
+		{{ album }}
+	{% endfor %}
+	{% endautoescape %}
+
+{% else %}
+	<p> No music available </p>
+{% endif %}
+
+
+
+<h2> Press </h2>
+
+
+
+
+
+<h2> Upcoming Shows </h2>
+{% if Shows_Embed %}
+
+	<!--- Auto-Escape allows the html to be read as a variable -->
+	{% autoescape off %}
+	{% for show in Shows_Embed %}
+		{{ show }}
+	{% endfor %}
+	{% endautoescape %}
+
+{% else %}
+	<p> No Shows available </p>
+{% endif %}
+
+
+
+
+
+
+
+
+
+<h2> Videos </h2>
+{% if Videos_Embed %}
+
+	<!--- Auto-Escape allows the html to be read as a variable -->
+	{% autoescape off %}
+	{% for video in Videos_Embed %}
+		{{ video }}
+	{% endfor %}
+	{% endautoescape %}
+
+{% else %}
+	<p> No videos available </p>
+{% endif %}
+
+
+
+
+
+
+</body>
